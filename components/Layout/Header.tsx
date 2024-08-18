@@ -30,15 +30,15 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   };
 
   const getIcon = () => {
-    if (pathname.startsWith('/admin/dashboard/orders')) return <FaCartArrowDown className="text-xl text-[#010127]" />;
-    if (pathname.startsWith('/admin/dashboard/users')) return <FaUsers className="text-xl text-[#010127]" />;
-    if (pathname.startsWith('/admin/dashboard')) return <FaHome className="text-xl text-[#010127]" />;
-    return <IoIosHome className="text-xl text-[#010127]" />;
+    if (pathname.startsWith('/admin/dashboard/orders')) return <FaCartArrowDown className="text-xl text-[color:var(--heading-text)]" />;
+    if (pathname.startsWith('/admin/dashboard/users')) return <FaUsers className="text-xl text-[color:var(--heading-text)]" />;
+    if (pathname.startsWith('/admin/dashboard')) return <FaHome className="text-xl text-[color:var(--heading-text)]" />;
+    return <IoIosHome className="text-xl text-[color:var(--heading-text)]" />;
   };
 
   return (
-    <header className={`bg-[#fff] text-neutral-700 p-4 w-full flex items-center justify-between shadow-md ${className}`}>
-      <div className="flex items-center space-x-2 text-lg font-medium">
+    <header className={`bg-[color:var(--white)] text-neutral-700 p-4 w-full flex items-center justify-between ${className}`}>
+      <div className="flex items-center space-x-2 text-lg font-medium text-[color:var(--heading-text)]">
         {getIcon()}
         <span>{getTitle()}</span>
       </div>
@@ -54,7 +54,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         <Button
           variant="ghost"
           size="icon"
-          onClick={toggleTheme} // Use Zustand's toggleTheme function
+          onClick={toggleTheme}
         >
           {theme === "light" ? <FaMoon className="text-[color:var(--primary-lighter)] text-lg" /> : <FaSun className="text-[color:var(--primary-lighter)] text-lg" />}
         </Button>

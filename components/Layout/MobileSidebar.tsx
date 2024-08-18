@@ -6,7 +6,7 @@ import {
   FaUsers,
   FaBoxOpen,
   FaCartArrowDown,
-  FaClipboardList
+  FaClipboardList,
 } from 'react-icons/fa';
 import { AiFillCustomerService } from 'react-icons/ai';
 import { IoChevronDownOutline } from 'react-icons/io5';
@@ -33,7 +33,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose }) => {
       />
       {/* Sidebar */}
       <div
-        className={`fixed top-16 left-0 w-[60%] bg-gradient-sidebar p-2 transition-transform transform ${
+        className={`fixed top-16 left-0 w-[60%] bg-[color:var(--bg-light)] p-2 transition-transform transform ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } h-full shadow-md z-20`}
       >
@@ -43,7 +43,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose }) => {
               className={`flex items-center space-x-2 cursor-pointer px-4 py-2 rounded-lg ${
                 pathname === '/admin/dashboard'
                   ? 'bg-[color:var(--bg-primary-hover)] text-[color:var(--secondary)] font-bold'
-                  : 'text-[#fff] hover:bg-[color:var(--bg-primary-hover)] hover:text-[color:var(--secondary)]'
+                  : 'text-[color:var(--bg-primary)] hover:bg-[color:var(--bg-primary-hover)] hover:text-[color:var(--secondary)]'
               }`}
               onClick={() => {
                 router.push('/admin/dashboard');
@@ -57,7 +57,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose }) => {
               className={`flex items-center space-x-2 cursor-pointer px-4 py-2 rounded-lg ${
                 pathname === '/admin/users'
                   ? 'bg-[color:var(--bg-primary-hover)] text-[color:var(--secondary)] font-bold'
-                  : 'text-[#fff] hover:bg-[color:var(--bg-primary-hover)] hover:text-[color:var(--secondary)]'
+                  : 'text-[color:var(--bg-primary)] hover:bg-[color:var(--bg-primary-hover)] hover:text-[color:var(--secondary)]'
               }`}
               onClick={() => {
                 router.push('/admin/users');
@@ -71,7 +71,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose }) => {
               className={`flex items-center justify-between space-x-2 cursor-pointer px-4 py-2 rounded-lg ${
                 isProductsOpen
                   ? 'bg-[color:var(--bg-primary-hover)] text-[color:var(--secondary)] font-bold'
-                  : 'text-[#fff] hover:bg-[color:var(--bg-primary-hover)] hover:text-[color:var(--secondary)]'
+                  : 'text-[color:var(--bg-primary)] hover:bg-[color:var(--bg-primary-hover)] hover:text-[color:var(--secondary)]'
               }`}
               onClick={handleProductsClick}
             >
@@ -94,7 +94,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose }) => {
                 className={`flex items-center space-x-2 cursor-pointer px-4 py-2 rounded-lg ${
                   pathname === '/admin/products/list'
                     ? 'bg-[color:var(--bg-primary-hover)] text-[color:var(--secondary)] font-bold'
-                    : 'text-[#fff] hover:bg-[color:var(--bg-primary-hover)] hover:text-[color:var(--secondary)]'
+                    : 'text-[color:var(--bg-primary)] hover:bg-[color:var(--bg-primary-hover)] hover:text-[color:var(--secondary)]'
                 }`}
                 onClick={() => {
                   router.push('/admin/products/list');
@@ -107,7 +107,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose }) => {
                 className={`flex items-center space-x-2 cursor-pointer px-4 py-2 rounded-lg ${
                   pathname === '/admin/products/add'
                     ? 'bg-[color:var(--bg-primary-hover)] text-[color:var(--secondary)] font-bold'
-                    : 'text-[#fff] hover:bg-[color:var(--bg-primary-hover)] hover:text-[color:var(--secondary)]'
+                    : 'text-[color:var(--bg-primary)] hover:bg-[color:var(--bg-primary-hover)] hover:text-[color:var(--secondary)]'
                 }`}
                 onClick={() => {
                   router.push('/admin/products/add');
@@ -121,7 +121,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose }) => {
               className={`flex items-center space-x-2 cursor-pointer px-4 py-2 rounded-lg ${
                 pathname === '/admin/orders'
                   ? 'bg-[color:var(--bg-primary-hover)] text-[color:var(--secondary)] font-bold'
-                  : 'text-[#fff] hover:bg-[color:var(--bg-primary-hover)] hover:text-[color:var(--secondary)]'
+                  : 'text-[color:var(--bg-primary)] hover:bg-[color:var(--bg-primary-hover)] hover:text-[color:var(--secondary)]'
               }`}
               onClick={() => {
                 router.push('/admin/orders');
@@ -135,7 +135,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose }) => {
               className={`flex items-center space-x-2 cursor-pointer px-4 py-2 rounded-lg ${
                 pathname === '/admin/inventory'
                   ? 'bg-[color:var(--bg-primary-hover)] text-[color:var(--secondary)] font-bold'
-                  : 'text-[#fff] hover:bg-[color:var(--bg-primary-hover)] hover:text-[color:var(--secondary)]'
+                  : 'text-[color:var(--bg-primary)] hover:bg-[color:var(--bg-primary-hover)] hover:text-[color:var(--secondary)]'
               }`}
               onClick={() => {
                 router.push('/admin/inventory');
@@ -149,7 +149,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose }) => {
               className={`flex items-center space-x-2 cursor-pointer px-4 py-2 rounded-lg ${
                 pathname === '/admin/support'
                   ? 'bg-[color:var(--bg-primary-hover)] text-[color:var(--secondary)] font-bold'
-                  : 'text-[#fff] hover:bg-[color:var(--bg-primary-hover)] hover:text-[color:var(--secondary)]'
+                  : 'text-[color:var(--bg-primary)] hover:bg-[color:var(--bg-primary-hover)] hover:text-[color:var(--secondary)]'
               }`}
               onClick={() => {
                 router.push('/admin/support');

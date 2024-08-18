@@ -85,7 +85,7 @@ const AdminLoginPage = () => {
       </div>
 
       {/* Right */}
-      <div className="w-full lg:w-2/5 bg-gradient-to-br from-[#274132] to-[#297248] lg:bg-[#F1F5FF] lg:bg-none px-4 lg:px-0">
+      <div className="w-full lg:w-2/5 bg-gradient-to-br from-[#274132] to-[#297248] lg:bg-[color:var(--bg-light)] lg:bg-none px-4 lg:px-0">
         <div className="lg:hidden">
           <Image
             src={logo}
@@ -99,7 +99,7 @@ const AdminLoginPage = () => {
           <Card className="w-full max-w-md shadow-lg">
             <CardContent className="space-y-6">
               <CardHeader>
-                <h2 className="text-2xl font-semibold text-center text-gray-800">
+                <h2 className="text-2xl font-semibold text-center text-[color:var(--paragraph-text)]">
                   Admin Login
                 </h2>
               </CardHeader>

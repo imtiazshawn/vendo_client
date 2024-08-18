@@ -13,13 +13,13 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   };
 
   return (
-    <div className="flex h-screen bg-gray-100">
+    <div className="flex h-screen bg-[color:var(--bg-light)]">
       <Sidebar className="hidden lg:block fixed top-0 left-0 h-full shadow-md" />
       <div className="flex-1 flex flex-col ml-0 lg:ml-64">
-        <Header className="hidden lg:flex top-0 left-64 right-0 h-20 bg-white shadow-md" />
+      <Header className="hidden lg:flex top-0 left-64 right-0 h-20 bg-[color:var(--white)] drop-shadow-md" />
         <MobileSidebar isOpen={isSidebarOpen} onClose={() => setSidebarOpen(false)} />
         <MobileHeader onMenuToggle={toggleSidebar} />
-        <main className="flex-1 mt-20 lg:mt-0 p-2 lg:p-6 overflow-auto">
+        <main className="flex-1 mt-20 lg:mt-0 p-2 lg:p-6 overflow-auto bg-[color:var(--bg-light)]">
           {children}
         </main>
       </div>

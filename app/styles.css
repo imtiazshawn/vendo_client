@@ -1,25 +1,33 @@
 :root {
-    --primary: #48bb78;
-    --secondary: #f6e05e;
-    --primary-lighter: #A0D5CA;
-    --bg-primary: #274132;
-    --bg-secondary: #102f1d;
-    --bg-primary-hover: #0a2e17;
-    --bg-light: #f1f5ff;
-    --heading-text: #1c1c1c;
-    --paragraph-text: #3b3f45;
-  }
+  --primary: #48bb78;
+  --secondary: #f6e05e;
+  --primary-lighter: #a0d5ca;
+  --bg-primary: #274132;
+  --bg-secondary: #102f1d;
+  --bg-primary-hover: #0a2e17;
+  --bg-light: #f1f5ff;
+  --heading-text: #1c1c1c;
+  --paragraph-text: #3b3f45;
+  --white: #fff;
+}
 
-  .dark {
-    --bg-color: #000000;
-    --text-color: #ffffff;
-  }
-  
-  .bg-gradient-sidebar {
-    background: linear-gradient(
-      to top,
-      var(--bg-secondary),
-      var(--bg-primary)
-    );
-  }
-  
+.dark {
+  --primary: #64d9a3;
+  --secondary: #ffeb8a;
+  --primary-lighter: #83e3c2;
+  --bg-primary: #1c3023;
+  --bg-secondary: #0c1b10;
+  --bg-primary-hover: #05110a;
+  --bg-light: #0f141a;
+  --heading-text: #e0e0e0;
+  --paragraph-text: #c2c7cc;
+  --white: #131920;
+}
+
+.bg-gradient-sidebar {
+  background: linear-gradient(to top, var(--bg-secondary), var(--bg-primary));
+}
+
+.shadow-bottom {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+}
