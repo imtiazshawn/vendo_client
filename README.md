@@ -21,7 +21,7 @@ VENDO is a modern, full-featured eCommerce platform built with [Next.js](https:/
 First, clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/vendo.git
+git clone https://github.com/imtiazshawn/vendo_client.git
 cd vendo
 ```
 
