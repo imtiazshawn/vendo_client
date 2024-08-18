@@ -1,4 +1,4 @@
-###VENDO - eCommerce Platform
+##VENDO - eCommerce Platform
 VENDO is a modern, full-featured eCommerce platform built with Next.js. It offers a seamless and responsive shopping experience, optimized for performance and scalability.
 
 Table of Contents
