@@ -6,7 +6,7 @@ import { IoIosLogOut, IoIosHome } from "react-icons/io";
 import { HeaderProps } from '@/src/types/layout';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useTheme } from "next-themes";
+import { useThemeStore } from "@/src/store/themeStore";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -20,7 +20,7 @@ import {
 
 const Header: React.FC<HeaderProps> = ({ className }) => {
   const pathname = usePathname();
-  const { theme, setTheme } = useTheme();
+  const { theme, toggleTheme } = useThemeStore();
 
   const getTitle = () => {
     if (pathname.startsWith('/admin/dashboard/orders')) return 'Orders Manager';
@@ -54,7 +54,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         <Button
           variant="ghost"
           size="icon"
-          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+          onClick={toggleTheme} // Use Zustand's toggleTheme function
         >
           {theme === "light" ? <FaMoon className="text-[color:var(--primary-lighter)] text-lg" /> : <FaSun className="text-[color:var(--primary-lighter)] text-lg" />}
         </Button>

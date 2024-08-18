@@ -9,8 +9,12 @@
     --heading-text: #1c1c1c;
     --paragraph-text: #3b3f45;
   }
+
+  .dark {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+  }
   
-  /* BG Gradient */
   .bg-gradient-sidebar {
     background: linear-gradient(
       to top,
