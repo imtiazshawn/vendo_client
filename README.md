@@ -6,13 +6,6 @@ VENDO is a modern, full-featured eCommerce platform built with [Next.js](https:/
 - [Features](#features)
 - [Getting Started](#getting-started)
 - [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Environment Variables](#environment-variables)
-- [Running the Project](#running-the-project)
-- [Learn More](#learn-more)
-- [Deploy on Vercel](#deploy-on-vercel)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
@@ -55,12 +48,12 @@ bun dev
 Open http://localhost:3000 in your browser to see the application.
 
 # Tech Stack
-Next.js - React framework for server-rendered apps.
-TypeScript - Strongly typed JavaScript.
-Tailwind CSS - Utility-first CSS framework.
-MicrosoftSQL - Relational database for storing data.
-Stripe & AamarPay - Payment processing platform.
-Vercel - Deployment platform for Next.js.
+- Next.js - React framework for server-rendered apps.
+- TypeScript - Strongly typed JavaScript.
+- Tailwind CSS - Utility-first CSS framework.
+- MicrosoftSQL - Relational database for storing data.
+- Stripe & AamarPay - Payment processing platform.
+- Vercel - Deployment platform for Next.js.
 
 # Running the Project
 
