@@ -1,0 +1,21 @@
+:root {
+    --primary: #48bb78;
+    --secondary: #f6e05e;
+    --primary-lighter: #A0D5CA;
+    --bg-primary: #274132;
+    --bg-secondary: #102f1d;
+    --bg-primary-hover: #0a2e17;
+    --bg-light: #f1f5ff;
+    --heading-text: #1c1c1c;
+    --paragraph-text: #3b3f45;
+  }
+  
+  /* BG Gradient */
+  .bg-gradient-sidebar {
+    background: linear-gradient(
+      to top,
+      var(--bg-secondary),
+      var(--bg-primary)
+    );
+  }
+  
