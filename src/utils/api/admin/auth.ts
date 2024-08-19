@@ -1,21 +1,17 @@
 import axios from "axios";
+import Cookies from 'js-cookie';
 import { baseURL } from "../baseUrl";
 
 const API_URL = `${baseURL}/api/admin/auth/login`;
 
 export const login = async (email: string, password: string) => {
   try {
-    const response = await axios.post(API_URL, {
-      email,
-      password,
-    });
+    const response = await axios.post(API_URL, { email, password });
 
     if (response.status === 200) {
       const { access_token, refresh_token, token_type } = response.data;
 
-      localStorage.setItem("accessToken", access_token);
-      localStorage.setItem("refreshToken", refresh_token);
-      localStorage.setItem("tokenType", token_type);
+      Cookies.set('token', access_token, { expires: 1 });
 
       return response.data;
     }

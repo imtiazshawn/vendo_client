@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -33,8 +33,15 @@ const AdminLoginPage = () => {
       await login(email, password);
       router.push("/admin/dashboard");
     } catch (error) {
-      setError("Invalid Email or Password");
-      console.error("Login Error:", error);
+      if (error instanceof Error) {
+        setError(error.message);
+        console.error("Login Error:", error.message);
+        setLoading(false);
+      } else {
+        setError("An unexpected error occurred.");
+        console.error("Login Error:", error);
+        setLoading(false);
+      }
       setLoading(false);
     }
   };
@@ -142,8 +149,17 @@ const AdminLoginPage = () => {
               </form>
             </CardContent>
             <CardFooter className="flex justify-center">
-              <Button onClick={handleLogin} type="submit" disabled={loading} className="w-full bg-gradient-to-r from-[#48BB78] to-[#34a853] text-white hover:from-[#34a853] hover:to-[#48BB78]">
-                {loading ? <FaSpinner className="animate-spin mx-auto" /> : "Login"}
+              <Button
+                onClick={handleLogin}
+                type="submit"
+                disabled={loading}
+                className="w-full bg-gradient-to-r from-[#48BB78] to-[#34a853] text-white hover:from-[#34a853] hover:to-[#48BB78]"
+              >
+                {loading ? (
+                  <FaSpinner className="animate-spin mx-auto" />
+                ) : (
+                  "Login"
+                )}
               </Button>
             </CardFooter>
           </Card>
