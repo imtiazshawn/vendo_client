@@ -1,5 +1,7 @@
 import React from "react";
 import { usePathname } from "next/navigation";
+import { useRouter } from 'next/navigation';
+import { deleteCookie } from 'cookies-next';
 import { FaBell, FaMoon, FaSearch, FaUsers, FaHome, FaCartArrowDown } from "react-icons/fa";
 import { FaSun } from "react-icons/fa6";
 import { IoIosLogOut, IoIosHome } from "react-icons/io";
@@ -21,6 +23,7 @@ import {
 const Header: React.FC<HeaderProps> = ({ className }) => {
   const pathname = usePathname();
   const { theme, toggleTheme } = useThemeStore();
+  const router = useRouter();
 
   const getTitle = () => {
     if (pathname.startsWith('/admin/dashboard/orders')) return 'Orders Manager';
@@ -34,6 +37,11 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
     if (pathname.startsWith('/admin/dashboard/users')) return <FaUsers className="text-xl text-[color:var(--heading-text)]" />;
     if (pathname.startsWith('/admin/dashboard')) return <FaHome className="text-xl text-[color:var(--heading-text)]" />;
     return <IoIosHome className="text-xl text-[color:var(--heading-text)]" />;
+  };
+
+  const handleLogout = () => {
+    deleteCookie('token');
+    router.push('/admin/login');
   };
 
   return (
@@ -75,7 +83,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             <DropdownMenuItem>Profile</DropdownMenuItem>
             <DropdownMenuItem>Settings</DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={() => console.log("Logout clicked")}>
+            <DropdownMenuItem onClick={handleLogout}>
               <IoIosLogOut className="mr-2 text-lg" />
               Logout
             </DropdownMenuItem>
