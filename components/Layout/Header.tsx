@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useRouter } from 'next/navigation';
-import { deleteCookie } from 'cookies-next';
+import { getCookie, deleteCookie } from 'cookies-next';
 import { FaBell, FaMoon, FaSearch, FaUsers, FaHome, FaCartArrowDown } from "react-icons/fa";
 import { FaSun } from "react-icons/fa6";
 import { IoIosLogOut, IoIosHome } from "react-icons/io";
@@ -24,6 +24,15 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   const pathname = usePathname();
   const { theme, toggleTheme } = useThemeStore();
   const router = useRouter();
+  
+  // State to hold the username
+  const [username, setUsername] = useState<string | null>(null);
+
+  // Fetch the username only on the client side
+  useEffect(() => {
+    const cookieUsername = getCookie('username');
+    setUsername(cookieUsername as string);
+  }, []);
 
   const getTitle = () => {
     if (pathname.startsWith('/admin/dashboard/orders')) return 'Orders Manager';
@@ -41,6 +50,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
 
   const handleLogout = () => {
     deleteCookie('token');
+    deleteCookie('username');
     router.push('/admin/login');
   };
 
@@ -74,11 +84,11 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           <DropdownMenuTrigger asChild>
             <Avatar className="cursor-pointer">
               <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback>IS</AvatarFallback>
+              <AvatarFallback>{username ? username[0] : 'IS'}</AvatarFallback>
             </Avatar>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            <DropdownMenuLabel>{`Welcome, Username`}</DropdownMenuLabel>
+            <DropdownMenuLabel>{`Welcome, ${username || 'Guest'}`}</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem>Profile</DropdownMenuItem>
             <DropdownMenuItem>Settings</DropdownMenuItem>

@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 import { NextRequest } from 'next/server';
 import axios from 'axios';
-
 import { baseURL } from './src/utils/api/baseUrl';
+
 const VERIFY_TOKEN_URL = `${baseURL}/api/admin/auth/verify-token`;
 
 export async function middleware(request: NextRequest) {
@@ -39,7 +39,12 @@ export async function middleware(request: NextRequest) {
 
     if (response.status === 200 && response.data.valid) {
       console.log('Token verified successfully:', response.data.payload);
-      return NextResponse.next();
+
+      const username = response.data.payload.sub;
+      const responseWithCookie = NextResponse.next();
+      responseWithCookie.cookies.set('username', username, { path: '/' });
+      
+      return responseWithCookie;
     } else {
       console.error('Token verification failed:', response.data);
       return NextResponse.redirect(new URL('/admin/login', request.url));
