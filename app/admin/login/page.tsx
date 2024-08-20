@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { login } from "@/src/utils/api/admin/auth";
+import { login } from "@/src/actions/admin/auth";
 import circle_vector from "@/public/circle_vector.png";
 import logo from "@/public/logo_white.png";
 import login_image from "@/public/login_image.png";

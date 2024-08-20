@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { NextRequest } from 'next/server';
 import axios from 'axios';
-import { baseURL } from './src/utils/api/baseUrl';
+import { baseURL } from '@/src/actions/baseUrl';
 
 const VERIFY_TOKEN_URL = `${baseURL}/api/admin/auth/verify-token`;
 

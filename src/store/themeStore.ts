@@ -1,10 +1,5 @@
 import { create } from 'zustand';
-
-interface ThemeState {
-  theme: 'light' | 'dark';
-  toggleTheme: () => void;
-  setTheme: (theme: 'light' | 'dark') => void;
-}
+import { ThemeState } from '@/src/types/stores';
 
 export const useThemeStore = create<ThemeState>((set) => {
   const storedTheme = (typeof window !== 'undefined' && localStorage.getItem('theme')) as 'light' | 'dark';
